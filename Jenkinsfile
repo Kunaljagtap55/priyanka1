@@ -20,7 +20,7 @@ pipeline {
 			}
 			
 			}
-			        stage (slave2 httpd deploy) {
+			        stage ('slave2 httpd deploy') {
 					agent { label "slave2" }
 					steps { sh " sudo yum install httpd -y "
 					        sh " sudo service httpd start "
@@ -28,7 +28,7 @@ pipeline {
 					
 					}
 					}
-					stage {
+					stage ('slave3 httpd deploy') {
 					agent {label "slave3"}
 					steps {sh " sudo yum install httpd -y "
 					        sh " sudo service httpd start "
