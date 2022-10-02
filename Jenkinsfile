@@ -9,13 +9,15 @@ pipeline {
 			        steps {              
                     dir ('/mnt/data1/qa1')	
 					
-					{ sh "git clone https://github.com/Kunaljagtap55/priyanka1.git -b qa1"
+					{       sh "rm -rf /mnt/data1/qa1/priyanka1"
+						sh "git clone https://github.com/Kunaljagtap55/priyanka1.git -b qa1"
 			        }
 			        }
 			        }       
 			        stage ('git clone-2') {
 			        steps { 
-					dir ('/mnt/data1/qa2') { sh "git clone https://github.com/Kunaljagtap55/priyanka1.git -b qa2" 
+					dir ('/mnt/data1/qa2') { sh "rm -rf /mnt/data1/qa2/priyanka1"
+						sh "git clone https://github.com/Kunaljagtap55/priyanka1.git -b qa2" 
 			                              sh "chmod -R 777 /mnt/data1" }
 			}
 			
