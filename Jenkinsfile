@@ -4,6 +4,7 @@ pipeline {
             customWorkspace "/mnt/data1/git"		
 		}
 		          	stages {
+                                       stage ('clean repo') { steps { sh "rm -rf *" }}
 			        stage ('git clone-1'){
 			        steps {              
                     dir ('/mnt/data1/qa1')	
