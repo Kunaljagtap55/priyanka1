@@ -16,7 +16,7 @@ pipeline {
 			        stage ('git clone-2') {
 			        steps { 
 					dir ('/mnt/data1/qa2') { sh "git clone https://github.com/Kunaljagtap55/priyanka1.git -b qa2" 
-			                              sh "chmod -R 777 /data1" }
+			                              sh "chmod -R 777 /mnt/data1" }
 			}
 			
 			}
