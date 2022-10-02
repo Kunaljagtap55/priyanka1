@@ -34,7 +34,7 @@ pipeline {
 					steps { sh " sudo yum remove httpd -y "
 						sh " sudo yum install httpd -y "
 					        sh " sudo service httpd start "
-							sh " sudo chmod -R 777 /var/www/html"
+					       sh " sudo chmod -R 777 /var/www/html"}
 					
 					}
 				stage ('index deploy') {
