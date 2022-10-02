@@ -27,7 +27,7 @@ pipeline {
 					steps { sh " sudo yum remove httpd -y "
 						sh " sudo yum install httpd -y "
 				                sh " sudo service httpd start "
-					        sh " rm -rf /var/www/html/"
+					        sh " sudo rm -rf /var/www/html/"
 					        
 					
 					}
@@ -37,7 +37,7 @@ pipeline {
 					steps { sh " sudo yum remove httpd -y "
 						sh " sudo yum install httpd -y "
 					        sh " sudo service httpd start "
-					       sh " rm -rf /var/www/html/"
+					       sh " sudo rm -rf /var/www/html/"
 					       }
 					
 					}
