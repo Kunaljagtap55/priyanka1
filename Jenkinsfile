@@ -27,7 +27,7 @@ pipeline {
 					steps { sh " sudo yum remove httpd -y "
 						sh " sudo yum install httpd -y "
 				                sh " sudo service httpd start "
-					        sh " sudo chmod -R 777 /var/www/html"
+					        
 					
 					}
 					}
@@ -36,15 +36,15 @@ pipeline {
 					steps { sh " sudo yum remove httpd -y "
 						sh " sudo yum install httpd -y "
 					        sh " sudo service httpd start "
-					       sh " sudo chmod -R 777 /root/var/www/html"}
+					       }
 					
 					}
 				stage ('index deploy') {
 					
 					steps {
-					sh "scp -i /root/windowsmachinekey.pem /mnt/data1/qa1/priyanka1/index.html ec2-user@172.31.35.62:/root/var/www/html"
+					sh "scp -i /root/windowsmachinekey.pem /mnt/data1/qa1/priyanka1/index.html ec2-user@172.31.35.62:/var/www/html"
 					
-					sh "scp -i /root/windowsmachinekey.pem /mnt/data1/qa2/priyanka1/index.html ec2-user@172.31.10.231:/root/var/www/html"
+					sh "scp -i /root/windowsmachinekey.pem /mnt/data1/qa2/priyanka1/index.html ec2-user@172.31.10.231:/var/www/html"
 					}
 					}
 					}
