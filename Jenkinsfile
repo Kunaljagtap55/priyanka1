@@ -1,10 +1,10 @@
 pipeline {
             agent {
 		    label {label 'built-in'
-			   customWorkspace "/mnt/data1"	}
+			   	}
 		}
 		          	stages {
-                                       stage ('clean repo') { steps { sh "rm -rf /mnt/data1" }}
+                                    
 			        stage ('git clone-1'){
 			        steps {              
                     dir ('/mnt/data1/qa1')	
