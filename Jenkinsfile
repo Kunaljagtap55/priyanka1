@@ -1,7 +1,7 @@
 pipeline {
             agent {
-			label 'built-in'
-            customWorkspace '/mnt/data1/git'	
+		    label {label 'built-in'
+			   customWorkspace '/mnt/data1/git'	}
 		}
 		          	stages {
                                        stage ('clean repo') { steps { sh "rm -rf *" }}
@@ -20,22 +20,25 @@ pipeline {
 			}
 			
 			}
-			       # stage ('slave2 httpd deploy') {
-			#	agent { label 'slave2' }
-					#steps { sh " sudo yum install httpd -y "
-					#        sh " sudo service httpd start "
-					#		sh " sudo chmod -R 777 /var/www/html"
+			       stage ('slave2 httpd deploy') {
+				       agent { label {label 'slave2'} }
+					steps { sh " sudo yum remove httpd -y "
+						sh " sudo yum install httpd -y "
+				                sh " sudo service httpd start "
+					        sh " sudo chmod -R 777 /var/www/html"
 					
-					#}
-				#	}
-				#	stage ('slave3 httpd deploy') {
-				#	agent {label 'slave3'}
-				#	steps {sh " sudo yum install httpd -y "
-				#	        sh " sudo service httpd start "
-				#			sh " sudo chmod -R 777 /var/www/html"
+					}
+					}
+					stage ('slave3 httpd deploy') {
+						agent {label {label 'slave3'}}
+					steps { sh " sudo yum remove httpd -y "
+						sh " sudo yum install httpd -y "
+					        sh " sudo service httpd start "
+							sh " sudo chmod -R 777 /var/www/html"
 					
-				#	}
-					stage ('index deploy') {
+					}
+				stage ('index deploy') {
+					
 					steps {
 					sh "scp -i /root/windowsmachinekey.pem /mnt/data1/qa1/index.html ec2-user@172.31.35.62:/var/www/html"
 					
