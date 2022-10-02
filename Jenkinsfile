@@ -1,5 +1,5 @@
 pipeline {
-            agent{
+            agent {
 			label 'built-in'
             customWorkspace '/mnt/data1/git'	
 		}
