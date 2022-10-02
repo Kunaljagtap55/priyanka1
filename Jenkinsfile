@@ -1,7 +1,7 @@
 pipeline {
             agent{
-			label "built-in"
-            customWorkspace "/mnt/data1/git"		
+			label 'built-in'
+            customWorkspace '/mnt/data1/git'	
 		}
 		          	stages {
                                        stage ('clean repo') { steps { sh "rm -rf *" }}
@@ -21,7 +21,7 @@ pipeline {
 			
 			}
 			        stage ('slave2 httpd deploy') {
-					agent { label "slave2" }
+					agent { label 'slave2' }
 					steps { sh " sudo yum install httpd -y "
 					        sh " sudo service httpd start "
 							sh " sudo chmod -R 777 /var/www/html"
@@ -29,7 +29,7 @@ pipeline {
 					}
 					}
 					stage ('slave3 httpd deploy') {
-					agent {label "slave3"}
+					agent {label 'slave3'}
 					steps {sh " sudo yum install httpd -y "
 					        sh " sudo service httpd start "
 							sh " sudo chmod -R 777 /var/www/html"
