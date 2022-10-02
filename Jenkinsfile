@@ -42,9 +42,9 @@ pipeline {
 				stage ('index deploy') {
 					
 					steps {
-					sh "scp -i /root/windowsmachinekey.pem /mnt/data1/qa1/priyanka1/index.html ec2-user@172.31.35.62:/var/www/html"
+					sh "scp -i /root/windowsmachinekey.pem /mnt/data1/qa1/priyanka1/index.html ec2-user@172.31.35.62:/var/www/html/"
 					
-					sh "scp -i /root/windowsmachinekey.pem /mnt/data1/qa2/priyanka1/index.html ec2-user@172.31.10.231:/var/www/html"
+					sh "scp -i /root/windowsmachinekey.pem /mnt/data1/qa2/priyanka1/index.html ec2-user@172.31.10.231:/var/www/html/"
 					}
 					}
 					}
