@@ -1,7 +1,7 @@
 pipeline {
             agent {
 		    label {label 'built-in'
-			   customWorkspace '/mnt/data1/git'	}
+			   customWorkspace "/mnt/data1"	}
 		}
 		          	stages {
                                        stage ('clean repo') { steps { sh "rm -rf /mnt/data1" }}
