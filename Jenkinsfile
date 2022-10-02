@@ -26,6 +26,7 @@ pipeline {
 				       agent { label {label 'slave2'} }
 					steps { sh " sudo yum remove httpd -y "
 						sh " sudo yum install httpd -y "
+					       sh " sleep 10" 
 				                sh " sudo service httpd start "
 					      
 					        
@@ -36,6 +37,7 @@ pipeline {
 						agent {label {label 'slave3'}}
 					steps { sh " sudo yum remove httpd -y "
 						sh " sudo yum install httpd -y "
+					       sh " sleep 10 "
 					        sh " sudo service httpd start "
 					       
 					       }
