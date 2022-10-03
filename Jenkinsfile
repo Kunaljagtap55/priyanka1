@@ -40,6 +40,7 @@ pipeline {
 					       sh " sleep 10 "
 					        sh " sudo service httpd start "
 					       
+					       
 					       }
 					
 					}
