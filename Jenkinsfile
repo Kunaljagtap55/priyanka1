@@ -18,13 +18,13 @@ pipeline{
 					      }
 				   }
 				   
-				   stage ('build'){
-	                     dir ('/mnt/data/qa1') {
+				   stage ('clone-qa1'){
+					   steps {dir ('/mnt/data/qa1') {
                                            										   
                                            sh "git clone https://github.com/Kunaljagtap55/priyanka1.git -qa1"
                                            sh "systemctl start docker"
                                            sh "sleep 5"										   
-                                           sh "docker run --name master_branch -itdp 90:80 -v /mnt/data/qa1:/usr/local/apache2/htdocs/ httpd"
+                                           sh "docker run --name master_branch -itdp 90:80 -v /mnt/data/qa1:/usr/local/apache2/htdocs/ httpd"}
 
 }						 
 				   }
@@ -33,4 +33,4 @@ pipeline{
 
 
 }
-}
+
