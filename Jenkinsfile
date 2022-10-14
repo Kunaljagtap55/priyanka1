@@ -6,7 +6,7 @@ pipeline{
              stages {
 			       stage ('clone-master') {
 				        
-				         steps{ sh "sh "rm -rf /mnt/data/"
+				         steps{ sh "rm -rf /mnt/data/"
 				           dir ('/mnt/data/master/') {
                                      						   
                                            sh "git clone https://github.com/Kunaljagtap55/priyanka1.git -master"
