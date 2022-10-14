@@ -9,7 +9,7 @@ pipeline{
 				         steps{ sh "rm -rf /mnt/data/"
 				           dir ('/mnt/data/master/') {
                                      						   
-                                           sh "git clone https://github.com/Kunaljagtap55/priyanka1.git -master"
+                                           sh "git clone https://github.com/Kunaljagtap55/priyanka1.git -b master"
                                            sh "systemctl start docker"
                                            sh "sleep 5"										   
                                            sh "docker run --name master_branch -itdp 80:80 -v /mnt/data/master:/usr/local/apache2/htdocs/ httpd"
@@ -23,7 +23,7 @@ pipeline{
 				   stage ('clone-qa1'){
 					   steps {dir ('/mnt/data/qa1') {
                                          								   
-                                           sh "git clone https://github.com/Kunaljagtap55/priyanka1.git -qa1"
+                                           sh "git clone https://github.com/Kunaljagtap55/priyanka1.git -b qa1"
                                            sh "systemctl start docker"
                                            sh "sleep 5"										   
                                            sh "docker run --name master_branch -itdp 90:80 -v /mnt/data/qa1:/usr/local/apache2/htdocs/ httpd"}
