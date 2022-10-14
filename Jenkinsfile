@@ -12,7 +12,7 @@ pipeline{
                                            sh "git clone https://github.com/Kunaljagtap55/priyanka1.git -b master"
                                            
                                            sh "sleep 5"										   
-                                           sh "docker run --name master_branch -itdp 80:80 -v /mnt/data/master/priyanka1:/usr/local/apache2/htdocs/ httpd"
+                                           sh "docker run -itdp 80:80 -v /mnt/data/master/priyanka1:/usr/local/apache2/htdocs/ httpd"
                                            										   
 						  
 						  
@@ -26,7 +26,7 @@ pipeline{
                                            sh "git clone https://github.com/Kunaljagtap55/priyanka1.git -b qa1"
                                       
                                            sh "sleep 5"										   
-                                           sh "docker run --name master_branch -itdp 90:80 -v /mnt/data/qa1/priyanka1:/usr/local/apache2/htdocs/ httpd"}
+                                           sh "docker run -itdp 90:80 -v /mnt/data/qa1/priyanka1:/usr/local/apache2/htdocs/ httpd"}
 
 }						 
 				   }
