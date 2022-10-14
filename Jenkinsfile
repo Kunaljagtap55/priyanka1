@@ -20,7 +20,7 @@ pipeline{
 				   
 				   stage ('build'){
 	                     dir ('/mnt/data/qa1') {
-                                           sh "rm -rf /mnt/data/"										   
+                                           										   
                                            sh "git clone https://github.com/Kunaljagtap55/priyanka1.git -qa1"
                                            sh "systemctl start docker"
                                            sh "sleep 5"										   
