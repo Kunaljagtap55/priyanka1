@@ -1,7 +1,7 @@
 pipeline{
 			agent {
 				label {label 'docker'
-				 customWorkspace '/mnt/data/docker'}					
+				 customWorkspace '/mnt/data/'}					
 			}
              stages {
 			       stage ('clone-master') {
