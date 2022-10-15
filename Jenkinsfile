@@ -19,7 +19,7 @@ pipeline{
 						  
 						  }
 					      }
-				   }
+				   
 				   
 				   stage ('clone-qa1'){
 					   steps {
@@ -35,6 +35,10 @@ pipeline{
 				   }
 			 
 			 
+}
+
+
+
 
 
 
