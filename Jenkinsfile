@@ -11,9 +11,8 @@ pipeline{
 				           dir ('/var/lib/docker/volume/vol1') {
                                      					   
                                            sh "git clone https://github.com/Kunaljagtap55/priyanka1.git -b master"}
-                                           
                                            sh "sleep 5"										   
-                                           sh "docker run -itdp 80:80 -v vol1:/usr/local/apache2/htdocs/ httpd"
+                                           sh "docker run --name master -itdp 80:80 -v vol1:/usr/local/apache2/htdocs/ httpd"
                                            										   
 						  
 						  
