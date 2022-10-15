@@ -7,7 +7,7 @@ pipeline{
 			       stage ('clone-master') {
 				        
 				         steps{ sh "rm -rf /mnt/data/"
-	                                      sh "docker create volume vol1"
+	                                      sh "docker volume create vol1"
 				           dir ('/var/lib/docker/volume/vol1') {
                                      					   
                                            sh "git clone https://github.com/Kunaljagtap55/priyanka1.git -b master"}
@@ -23,7 +23,7 @@ pipeline{
 				   
 				   stage ('clone-qa1'){
 					   steps {
-					    sh "docker create volume vol2"
+					    sh "docker volume create vol2"
 					   dir ('var/lib/docker/volume/vol2') {
                                          								   
                                            sh "git clone https://github.com/Kunaljagtap55/priyanka1.git -b qa1"}
