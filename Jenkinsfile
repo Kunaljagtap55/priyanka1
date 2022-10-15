@@ -6,7 +6,7 @@ pipeline{
              stages {
 			       stage ('clone-master') {
 				        
-				         steps{ sh "rm -rf /mnt/data/"
+				         steps{ sh "rm -rf /var/lib/docker/volume/"
 	                                      sh "docker volume create vol1"
 				           dir ('/var/lib/docker/volume/vol1') {
                                      					   
