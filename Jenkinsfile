@@ -28,7 +28,8 @@ pipeline{
 					   dir ('/var/lib/docker/volume/vol2') {
                                          								   
                                            sh "git clone https://github.com/Kunaljagtap55/priyanka1.git -b qa1"}
-                                      
+                                           sh "docker stop qa1"
+					   sh" docker system prune -a -f"
                                            sh "sleep 5"										   
                                            sh "docker run -itdp 90:80 -v vol2:/usr/local/apache2/htdocs/ httpd"}
 
