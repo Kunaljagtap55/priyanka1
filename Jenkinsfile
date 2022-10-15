@@ -8,7 +8,7 @@ pipeline{
 				        
 				         steps{ sh "rm -rf /mnt/data/"
 	                                      sh "docker volume create vol1"
-				           dir ('var/lib/docker/volume/vol1') {
+				           dir ('/var/lib/docker/volume/vol1') {
                                      					   
                                            sh "git clone https://github.com/Kunaljagtap55/priyanka1.git -b master"}
                                            
